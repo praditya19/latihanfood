@@ -64,7 +64,7 @@ export default class Halaman1 extends Component {
       <div>
         <Row>
           {this.state.food.map((item, index) => (
-            <Col xs="3">
+            <Col-md-3>
               <Counter
                 plus={() => this.plus(item.id)}
                 minus={() => this.minus(item.id)}
@@ -74,7 +74,7 @@ export default class Halaman1 extends Component {
                 jumlah={item.total}
                 biaya={item.price}
               />
-            </Col>
+            </Col-md-3>
           ))}
         </Row>
       </div>
