@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardText
 } from "reactstrap";
+import { Link } from "react-router-dom";
 
 export default class Counter extends Component {
   state = {
@@ -20,7 +21,7 @@ export default class Counter extends Component {
     this.setState({
       barang: this.state.barang + 1
     });
-    this.props.plus(this.props.biaya);
+    this.props.plus();
   };
   kurang = () => {
     if (this.state.barang === 0) {
@@ -29,11 +30,10 @@ export default class Counter extends Component {
     this.setState({
       barang: this.state.barang - 1
     });
-    this.props.minus(this.props.biaya);
+    this.props.minus();
   };
 
   render() {
-    console.log(this.props);
     return (
       <div style={{ padding: "10px" }}>
         <Card>
@@ -59,7 +59,10 @@ export default class Counter extends Component {
               </Button>
             </Navbar>
           </CardBody>
-          <CardFooter>total:{this.props.jumlah}</CardFooter>
+          <CardFooter>total : {this.props.jumlah}</CardFooter>
+          <Button tag={Link} to="/pembayaran">
+            pesan sekarang
+          </Button>
         </Card>
       </div>
     );
